@@ -11,6 +11,18 @@ import joblib
 # selector = joblib.load(os.path.join('Model Output', 'selector.joblib'))
 # features = joblib.load(os.path.join('Model Output', 'features_list.joblib'))
 
+# URLs to your model artifacts
+model_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/neural_network_model.joblib'
+scaler_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/scaler.joblib'
+selector_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/selector.joblib'
+features_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/features_list.joblib'
+
+# Load the artifacts from the URLs
+model = load_joblib_from_url(model_url)
+scaler = load_joblib_from_url(scaler_url)
+selector = load_joblib_from_url(selector_url)
+features = load_joblib_from_url(features_url)
+
 # Load the trained model and preprocessing artifacts
 model = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\neural_network_model.joblib')
 scaler = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\scaler.joblib')
