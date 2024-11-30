@@ -1,5 +1,3 @@
-# pip install streamlit
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,17 +6,25 @@ import requests
 import io
 import os
 
-# URLs to your model artifacts
+# URLs to your model artifacts (excluding the selector)
 model_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/neural_network_model.joblib'
 scaler_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/scaler.joblib'
-selector_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/selector.joblib'
 features_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/features_list.joblib'
+
+# Function to load joblib files from URL
+def load_joblib_from_url(url):
+    response = requests.get(url)
+    return joblib.load(io.BytesIO(response.content))
 
 # Load the artifacts from the URLs
 model = load_joblib_from_url(model_url)
 scaler = load_joblib_from_url(scaler_url)
-selector = load_joblib_from_url(selector_url)
 features = load_joblib_from_url(features_url)
+
+# Alternatively, load the artifacts from local files
+# model = joblib.load(r'path_to_your_model\neural_network_model.joblib')
+# scaler = joblib.load(r'path_to_your_scaler\scaler.joblib')
+# features = joblib.load(r'path_to_your_features\features_list.joblib')
 
 st.title("Network Traffic Classification App")
 st.write("""
@@ -65,10 +71,8 @@ def preprocess_data(df):
     # Scale the data
     X_scaled = scaler.transform(df)
 
-    # Feature selection
-    X_selected = selector.transform(X_scaled)
-
-    return X_selected
+    # Since we're not using the selector, return the scaled data
+    return X_scaled
 
 if uploaded_file is not None:
     try:
@@ -131,4 +135,3 @@ for message in st.session_state.messages:
         st.markdown(f"**You:** {message['text']}")
     else:
         st.markdown(f"**Bot:** {message['text']}")
-    
