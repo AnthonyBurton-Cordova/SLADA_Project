@@ -21,11 +21,6 @@ model = load_joblib_from_url(model_url)
 scaler = load_joblib_from_url(scaler_url)
 features = load_joblib_from_url(features_url)
 
-# Alternatively, load the artifacts from local files
-# model = joblib.load(r'path_to_your_model\neural_network_model.joblib')
-# scaler = joblib.load(r'path_to_your_scaler\scaler.joblib')
-# features = joblib.load(r'path_to_your_features\features_list.joblib')
-
 st.title("Network Traffic Classification App")
 st.write("""
 This application allows you to upload network traffic data, run a pre-trained model, and receive predictions.
