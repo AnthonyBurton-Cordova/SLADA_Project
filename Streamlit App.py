@@ -6,10 +6,10 @@ import numpy as np
 import joblib
 import os
 
-model = joblib.load(os.path.join('Model Output', 'neural_network_model.joblib'))
-scaler = joblib.load(os.path.join('Model Output', 'scaler.joblib'))
-selector = joblib.load(os.path.join('Model Output', 'selector.joblib'))
-features = joblib.load(os.path.join('Model Output', 'features_list.joblib'))
+# model = joblib.load(os.path.join('Model Output', 'neural_network_model.joblib'))
+# scaler = joblib.load(os.path.join('Model Output', 'scaler.joblib'))
+# selector = joblib.load(os.path.join('Model Output', 'selector.joblib'))
+# features = joblib.load(os.path.join('Model Output', 'features_list.joblib'))
 
 # Load the trained model and preprocessing artifacts
 model = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\neural_network_model.joblib')
