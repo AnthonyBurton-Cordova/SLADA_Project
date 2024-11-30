@@ -20,12 +20,6 @@ scaler = load_joblib_from_url(scaler_url)
 selector = load_joblib_from_url(selector_url)
 features = load_joblib_from_url(features_url)
 
-# Load the trained model and preprocessing artifacts
-model = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\neural_network_model.joblib')
-scaler = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\scaler.joblib')
-selector = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\selector.joblib')
-features = joblib.load(r'C:\Users\antho\OneDrive\SMU\Semester 7 Fall 2024\Capstone B DS 6130\Model Output\features_list.joblib')
-
 st.title("Network Traffic Classification App")
 st.write("""
 This application allows you to upload network traffic data, run a pre-trained model, and receive predictions.
