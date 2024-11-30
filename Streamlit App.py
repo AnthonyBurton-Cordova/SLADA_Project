@@ -4,18 +4,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-# import os
-
-# model = joblib.load(os.path.join('Model Output', 'neural_network_model.joblib'))
-# scaler = joblib.load(os.path.join('Model Output', 'scaler.joblib'))
-# selector = joblib.load(os.path.join('Model Output', 'selector.joblib'))
-# features = joblib.load(os.path.join('Model Output', 'features_list.joblib'))
+import requests
+import io
+import os
 
 # URLs to your model artifacts
-model_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/neural_network_model.joblib'
-scaler_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/scaler.joblib'
-selector_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/selector.joblib'
-features_url = 'https://raw.githubusercontent.com/your-username/your-repo/main/Model%20Output/features_list.joblib'
+model_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/neural_network_model.joblib'
+scaler_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/scaler.joblib'
+selector_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/selector.joblib'
+features_url = 'https://raw.githubusercontent.com/AnthonyBurton-Cordova/SLADA_Project/main/features_list.joblib'
 
 # Load the artifacts from the URLs
 model = load_joblib_from_url(model_url)
